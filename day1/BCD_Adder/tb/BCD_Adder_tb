@@ -1,1 +1,59 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 09.06.2026 07:03:57
+// Design Name: 
+// Module Name: BCD_adder_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module BCD_adder_tb();
+reg [3:0]A_BCD_tb,B_BCD_tb;
+reg cin_BCD_tb;
+wire [3:0]s_BCD_tb;
+wire cout_BCD_tb;
+BCD_adder_using_ripplecarryadder dut(A_BCD_tb,B_BCD_tb,cin_BCD_tb,s_BCD_tb,cout_BCD_tb);
+initial
+begin
+{A_BCD_tb,B_BCD_tb,cin_BCD_tb}=0;
+end
+initial
+begin
+    A_BCD_tb = 4'b0000; B_BCD_tb = 4'b0000; cin_BCD_tb = 1'b0;
+    #1;
+    A_BCD_tb = 4'b0011; B_BCD_tb = 4'b0101; cin_BCD_tb = 1'b0;
+    #1;
+    A_BCD_tb = 4'b0111; B_BCD_tb = 4'b0001; cin_BCD_tb = 1'b0;
+    #1;
+    A_BCD_tb = 4'b1001; B_BCD_tb = 4'b0001; cin_BCD_tb = 1'b0;
+    #1;
+    A_BCD_tb = 4'b1000; B_BCD_tb = 4'b0001; cin_BCD_tb = 1'b1;
+    #1;
+    A_BCD_tb = 4'b1001; B_BCD_tb = 4'b1001; cin_BCD_tb = 1'b0;
+    #1;
+    A_BCD_tb = 4'b1001; B_BCD_tb = 4'b1001; cin_BCD_tb = 1'b1;
+    #1;
+
+    $finish;
+end
+
+initial
+begin
+    $monitor("A_BCD_tb=%b B_BCD_tb=%b cin_BCD_tb=%b s_BCD_tb=%b cout_BCD_tb=%b",
+              A_BCD_tb, B_BCD_tb, cin_BCD_tb, s_BCD_tb, cout_BCD_tb);
+end
+endmodule
 
