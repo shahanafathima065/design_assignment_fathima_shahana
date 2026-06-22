@@ -37,7 +37,7 @@ The verification file (`Testbench.v`) applies various test cases to validate the
 
 The behavioral simulation was performed using Vivado Simulator. The waveform below verifies the correct operation of the BCD Adder and confirms proper carry generation and BCD correction logic.
 
-![Simulation Waveform](bcd%20adder.png)
+![Simulation Waveform](waveform.png)
 
 ---
 
