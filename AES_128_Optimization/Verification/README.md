@@ -12,7 +12,7 @@ The verification environment automatically applies AES test vectors, captures DU
 
 # TEAM MEMBERS
 
-* FATHIMA SHAHANA CK
+* FATHIMA SHAHANA CK(LEAD)
 * ELVIN LIJU
 * SHREYA KRISHNAN 
 * MUHAMMED ASIF R
